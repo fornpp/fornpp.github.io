@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Website</title>
+	<style type="text/css">
+
+		.reg-form
+		{
+			text-align: center;
+			padding: 20px;
+			border-width: 2px;
+			border-color: black;
+			border-style: solid;
+		}
+	</style>
+
+	<script>
+		function validateForm()
+		{
+			var un = document.forms['reg-form']['name'].value;
+			var pass = document.forms['reg-form']['password'].value;
+
+			if(un =="")
+			{
+				alert("Username empty");
+				return false;
+			}
+			if(pass =="")
+			{
+				alert("Pass empty");
+				return false;
+			}
+			if(pass.length<3)
+			{
+				alert("Password lenth shd >=3");
+				return false;
+			}
+		}
+	</script>
+
+
+</head>
+<body>
+	<div class="form">
+		<form name="reg-form" class ="reg-form" action="verify.php" method="post" onsubmit="return validateForm()">
+			Name: <input type="text" name="name"><br><br>
+			Pass: <input type="password" name="password">
+			<br><br>
+			<input type="submit" name="submit">
+		</form>
+	</div>
+</body>
+</html>
+
+
